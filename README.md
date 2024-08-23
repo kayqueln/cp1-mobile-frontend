@@ -10,4 +10,4 @@ Gabriel França (RM551905)
 
 Edward de Lima (RM98676)
 
-Luana Duque (RM550813)
+Gabriel Francisco Lobo (RM99708)
