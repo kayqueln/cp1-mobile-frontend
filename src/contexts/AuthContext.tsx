@@ -78,8 +78,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const userData = (await api.get(`/usuario/email/${email}`)).data;
 
         setUser(userData);
-
-        navigation.navigate("(root)");
       }
     } catch (err) {
       Alert.alert("Essa conta não existe, tente novamente!");
