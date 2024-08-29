@@ -7,7 +7,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Box } from "native-base";
 import React, { useState } from "react";
 import TaskList from "./components/TaskList";
-
+      
 export default function TasksScreen() {
   const { addTask } = useTasks();
 

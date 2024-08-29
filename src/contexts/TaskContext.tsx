@@ -10,7 +10,7 @@ interface TaskContextType {
   editTask: (id: string, title: string) => void;
 }
 
-const TaskContext = createContext<TaskContextType | undefined>(undefined);
+const TaskContext =  createContext<TaskContextType | undefined>(undefined);
 
 export const TaskProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -52,6 +52,8 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
+
+
 export const useTasks = () => {
   const context = useContext(TaskContext);
   if (!context) {
@@ -59,3 +61,8 @@ export const useTasks = () => {
   }
   return context;
 };
+
+
+
+
+

@@ -20,3 +20,5 @@ export const createCamera = async ({
 
   await api.post(`/cameras`, reqObj)
 }
+
+

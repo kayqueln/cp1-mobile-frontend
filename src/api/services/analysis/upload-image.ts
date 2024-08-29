@@ -9,3 +9,5 @@ export const uploadImage = async ({
 }) => {
   await api.post(`/fotografias/upload?idCamera=${idCamera}`, { image })
 }
+
+

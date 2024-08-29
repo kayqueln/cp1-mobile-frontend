@@ -1,7 +1,7 @@
 import React, {
   createContext,
   useState,
-  useEffect,
+  useEffect,   
   ReactNode,
   useContext,
 } from "react";
@@ -25,7 +25,11 @@ interface AuthContextData {
   loading: boolean;
   signIn: (data: SignInData) => Promise<void>;
   signOut: () => void;
+
+
 }
+
+
 
 interface SignInData {
   username: string;
