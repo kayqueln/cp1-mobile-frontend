@@ -15,7 +15,7 @@ interface User {
   idUsuario: number;
   nome: string;
   cpf: string;
-  email: string;
+  username: string;
   senha: string;
   perfil: string;
 }
@@ -28,7 +28,7 @@ interface AuthContextData {
 }
 
 interface SignInData {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -60,11 +60,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     loadStorageData();
   }, []);
 
-  const signIn = async ({ email, password }: SignInData) => {
+  const signIn = async ({ username, password }: SignInData) => {
     try {
-      const response = await api.post("/login/token", {
-        email,
-        senha: password,
+      const response = await api.post("/login", {
+        username,
+        password,
       });
 
       if (response.status === 200) {
@@ -75,9 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
         api.defaults.headers.Authorization = `Bearer ${token}`;
 
-        const userData = (await api.get(`/usuario/email/${email}`)).data;
-
-        setUser(userData);
+        navigation.navigate("(root)");
       }
     } catch (err) {
       Alert.alert("Essa conta não existe, tente novamente!");

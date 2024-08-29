@@ -1,4 +1,4 @@
-import StyledButton from "@/src/components/shared/Button";
+import { PrimaryButton } from "@/src/components/shared/Button";
 import StyledInput from "@/src/components/shared/Input";
 import Colors from "@/src/constants/Colors";
 import { useAuth } from "@/src/contexts/AuthContext";
@@ -13,7 +13,7 @@ export default function LoginScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const { signIn } = useAuth();
 
-  const [userData, setUserData] = useState({ email: "", password: "" });
+  const [userData, setUserData] = useState({ username: "", password: "" });
 
   const handleInputChange = (name: string, value: string) => {
     setUserData((prevData) => ({
@@ -40,9 +40,9 @@ export default function LoginScreen() {
       <Box style={styles.content}>
         <Box style={styles.form}>
           <StyledInput
-            onChangeText={(text) => handleInputChange("email", text)}
-            value={userData.email}
-            label="E-mail"
+            onChangeText={(text) => handleInputChange("username", text)}
+            value={userData.username}
+            label="Usuário"
           />
           <StyledInput
             onChangeText={(text) => handleInputChange("password", text)}
@@ -52,9 +52,9 @@ export default function LoginScreen() {
         </Box>
 
         <Box style={styles.actions}>
-          <StyledButton onPress={() => signIn(userData)}>
+          <PrimaryButton onPress={() => signIn(userData)}>
             Entrar na conta
-          </StyledButton>
+          </PrimaryButton>
         </Box>
       </Box>
     </SafeAreaView>
